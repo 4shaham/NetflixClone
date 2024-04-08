@@ -1,12 +1,16 @@
-import React ,{useState}from "react";
-import { Link } from "react-router-dom";
+import React ,{ useState}from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 
 function Login() {
 
   const[userDetails,setUserDetails]=useState({name:'',password:''})
   const[error,setError]=useState({errName:'',errPassword:''})
 
- const onClickSubmit=(e)=>{
+  const{user,logIn}=UserAuth()
+  const navigate=useNavigate()
+
+ const onClickSubmit=async(e)=>{
     e.preventDefault();
 
     if(userDetails.name.trim()=='' && userDetails.password.trim()=='' ){
@@ -23,7 +27,14 @@ function Login() {
      return  setError({name:error.name,password:'this field is required'})
     }
 
-    console.log(userDetails)
+    
+    try{
+      await logIn(userDetails.name,userDetails.password)
+      navigate('/')
+    }catch(err){
+      console.log(arr)
+    }
+    console.log(userDetails,user)
   }
 
 

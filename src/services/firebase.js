@@ -1,7 +1,7 @@
 
 
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+
 import {getAuth} from 'firebase/auth';
 import {getFirestore} from 'firebase/firestore'
 
@@ -18,19 +18,19 @@ const {
 
 
 const firebaseConfig = {
-  apiKey: VITE_API_KEY,
-  authDomain:VITE_AUTH_DOMAIN,
-  projectId:VITE_PROJECT_ID,
-  storageBucket:VITE_STORAGE_BUCKET,
-  messagingSenderId:VITE_MESSAGING_SENDER_ID,
-  appId:VITE_APP_ID,
-  measurementId:VITE_MEASUREMENT_ID,
+  apiKey:'AIzaSyDrh-uRzNvN78tlHz2Up8fsNdsgxdj7kgA',
+  authDomain:"netflix-clone-ce887.firebaseapp.com",
+  projectId:"netflix-clone-ce887",
+  storageBucket:"netflix-clone-ce887.appspot.com",
+  messagingSenderId:"795708902832",
+  appId:"1:795708902832:web:fb0fc9d7cbc136739f5a75",
+  measurementId:'G-QGYF37CW4F',
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-const analytics = getAnalytics(app);
+
 
 export const auth=getAuth(app)
 export const db=getFirestore(app)

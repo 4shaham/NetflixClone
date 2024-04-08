@@ -6,6 +6,7 @@ import { UserAuth } from "../context/AuthContext";
 
 
 
+
 function Signup() {
 
   const[userDetails,setUserDetails]=useState({name:'',password:''})
@@ -31,9 +32,9 @@ function Signup() {
      return  setError({name:error.name,password:'this field is required'})
     }  
 
-
+     
     try{
-
+      console.log('shamamma',userDetails.name,userDetails.password)  
       await signUp(userDetails.name,userDetails.password)
       navigate("/")
 
