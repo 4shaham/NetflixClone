@@ -9,4 +9,9 @@ const endpoints={
     upcoming:`${baseUrl}/movie/upcoming?api_key=${key}`
 }
 
+export function createImageUrl(fileName,size){
+ return `https://image.tmdb.org/t/p/${size}/${fileName}`
+}
+
+
 export default endpoints;
